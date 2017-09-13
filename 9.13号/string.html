@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	/*
+	object
+	String
+	Number
+	Boolean
+	Array
+	Date
+	RegExp
+	 */
+	/*
+	String
+	 */
+	let str='   abcdlbcdy   ';
+	console.log(str)
+	// console.log(str.constructor)
+	console.log(str.__proto__ ); 
+	/*console.log(str.length)*/
+	/*console.log(str.charAt(2));
+	console.log(str.charCodeAt(2))
+	console.log(String.fromCharCode(99))*/
+	/*console.log(str.indexOf('b'))
+	console.log(str.lastIndexOf('b'))
+	console.log(str.includes('x'))
+	console.log(str.slice(2,5))
+	console.log(str.slice(2,str.length-1))
+	console.log(str.slice(2,-3))
+	console.log(str.substring(1,str.length))
+	console.log(str.substr(1,2))*/
+	console.log(str.replace('bcd','**'))
+	/*
+	替换所有
+	 */
+/*	console.log(replaceAll(str,'bcd'))
+	function replaceAll(str,rStr){
+		let sdr='';
+		for(let i=0;i<rStr.length;i++){
+			sdr=sdr+'*'
+		}
+		循环while 条件 存在rStr
+		 while(str.includes(rStr)){
+               str=str.replace(rStr,sdr)
+		 }
+		 
+		 return str
+		存在 
+		替换 replace 
+		更新 
+		返回 return 
+	}*/
+	/*
+	匹配 match
+	 */
+	console.log(str.match('ab'))
+	console.log(str.trim())
+	let str1='a-b-c-d'
+	console.log(str1.split('-'))
+	document.write(str1.fontcolor('red'))
+	document.write(str1.fontsize('30px'))
+
+
+
+
+
+	let url='https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/'
+	function chazhao(str,rStr){
+		let arr=[];
+		let sdr='*'.repeat(rStr.length)
+		while(str.includes(rStr)){
+			arr.push(str.indexOf(rStr))
+			str=str.replace(rStr,sdr)
+		}
+		return arr;
+	} 
+	console.log(chazhao(url,'baidu'));
+	function position(str,rStr){
+		let arr=[];
+		for(let i=0;i<str.length;i++){
+			if(str.slice(i,i+rStr.length)!=rStr){
+				continue;
+			}
+			arr.push(i)
+		}
+		return arr;
+	}
+	console.log(position(url,'baidu'));
+</script>

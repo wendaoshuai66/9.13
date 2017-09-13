@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prototype1</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	/*
+	构造函数有一个属性   prototype  ----->叫原型 对象        属性值是对象
+	 */
+/*	function Person(name,age,sex){
+		this.name=name;
+		this.age=age;
+		this.sex=sex;
+		this.sleep=function(){
+			alert(`${this.name}睡觉呢`)
+		}
+	}
+	Person.prototype={
+		play : function(){
+			alert(`${this.name}玩儿`)
+		},
+		study: function(){
+			alert(`${this.name}学习呢`)
+		},
+	}
+	Person.prototype.eat=function(){
+		alert(`${this.name}吃泡面`)
+	}
+	let zhangsan=new Person('zhangsan',18,'nan');
+	let lisi=new Person('lisi',20,'nv');
+	zhangsan.eat();
+	zhangsan.play();
+	zhangsan.study();
+	zhangsan.sleep();
+	console.log(zhangsan);
+	lisi.eat();
+	lisi.play();
+	lisi.study();
+	delete lisi.sleep;
+	delete lisi.age;
+	console.log(lisi);*/
+	/*
+	判断是否是一个特定对象   instanceof
+	 */
+/*	function Student(){
+		this.name='student'
+	}
+	function Person(){
+		this.name='person'
+	}
+	let zhangsan=new Student();
+	let lisi=new Person();
+	let arr=[];
+	console.log(zhangsan instanceof Student)
+	console.log(lisi instanceof Student)
+	console.log(arr instanceof Array)
+	console.log(typeof arr.constructor)*/
+	/*
+	继承
+	 */
+	function Person(name,age,sex){
+		this.name=name;
+		this.age=age;
+		this.sex=sex;
+		this.sleep=function(){
+			alert(`${this.name}睡觉呢`)
+		}
+	}
+	Person.prototype={
+		play : function(){
+			alert(`${this.name}玩儿`)
+		},
+		study: function(){
+			alert(`${this.name}学习呢`)
+		},
+	}
+	Person.prototype.eat=function(){
+		alert(`${this.name}吃泡面`)
+	}
+	function Student(){
+		this.classes='1406';
+		this.num='20141006';
+
+	}
+	// let zhangsan=new Person('zhangsan',18,'nan');
+	Student.prototype=new Person('zhangsan',18,'nan');
+	Student.prototype.skill=function(){
+		alert('全栈')
+	};
+	let lisi=new Student();
+	/*lisi.skill();
+	lisi.eat();
+	lisi.sleep();*/
+	console.log(lisi)
+</script>
